@@ -28,4 +28,4 @@ https://apiauthnode.herokuapp.com/user    METHODE: PUT headers: {"x-access-token
 https://apiauthnode.herokuapp.com/users   METHODE: GET headers: {"x-access-token": "{token}"}
 
 ## logout
-https://apiauthnode.herokuapp.com/users   METHODE: DELETE
+https://apiauthnode.herokuapp.com/user   METHODE: DELETE
