@@ -10,11 +10,29 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+const db = require('./app/models');
+const dbConfig = require('./app/config/db.config');
+
+db.mongoose
+    .connect(dbConfig.DB, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => {
+        console.log("Successfully connect to MongoDB")
+    })
+    .catch(err => {
+        console.error("Connection error ", err);
+        process.exit()
+    });
+
 app.get("/", (req, res) => {
     res.json({
         message: "Welcome to auth api with node"
     })
 });
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
