@@ -1,5 +1,5 @@
 {
-  "name": "login_api",
+  "name": "apiauthnode",
   "version": "1.0.0",
   "description": "api nodejs pour authentification",
   "main": "index.js",
