@@ -14,7 +14,7 @@ const db = require('./app/models');
 const dbConfig = require('./app/config/db.config');
 
 db.mongoose
-    .connect(dbConfig.DB, {
+    .connect(`mongodb://localhost:27017/auth_db`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

@@ -5,7 +5,7 @@ const User = db.user;
 
 
 exports.user = (req, res) => {
-    let token = req.headers["x-access-token"];
+    let token = req.headers["x-access-token"]; //test gitKraken
 
     jwt.verify(token, config.jwt_key, (err, decoded) => {
         if(err) return res.status(500).send({ error: true, message: err });
